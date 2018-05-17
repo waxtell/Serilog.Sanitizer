@@ -18,3 +18,30 @@ var logger = new LoggerConfiguration()
                 // Configure sinks, etc.
                 .CreateLogger();
 ```
+
+Or, configure the destructured behavior via web/app.config
+
+```csharp
+var logger = new LoggerConfiguration()
+                .Sanitize()
+                    .Unstructured()
+                        .FromConfig((ISanitizerConfiguration) ConfigurationManager.GetSection("sanitizer"))
+                    .Continue()
+                // Configure sinks, etc.
+                .CreateLogger();
+
+  <configSections>
+    <section name="sanitizer" type="Serilog.Sanitizer.Configuration.SanitizerConfigSection,Serilog.Sanitizer"/>
+  </configSections>
+
+  <sanitizer>
+    <ToOverride>
+      <property Name="Request.Params[HTTP_AUTHORIZATION]" Override="¯\_(ツ)_/¯"/>
+      <property Name="Request.Headers[Authorization]" Override="¯\_(ツ)_/¯"/>
+    </ToOverride>
+    <ToRemove>
+      <property Name="Request.Params[ALL_RAW]"/>
+      <property Name="Request.Params[ALL_HTTP]"/>
+    </ToRemove>
+  </sanitizer>
+```
