@@ -1,6 +1,8 @@
 # Serilog.Sanitizer
 Log sanitizer for Serilog that supports structured and unstructured log event data.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/gih87n0emsjf8052?svg=true)](https://ci.appveyor.com/project/waxtell/serilog-sanitizer)
+
 Sanitize (either remove or override) both structured and unstructured data
 
 ```csharp
