@@ -3,24 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27705.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sanitizer", "Serilog.Sanitizer\Serilog.Sanitizer.csproj", "{A2474CAA-B348-4B09-9515-8FB9A932881E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sanitizer", "Serilog.Sanitizer\Serilog.Sanitizer.csproj", "{A2474CAA-B348-4B09-9515-8FB9A932881E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sanitizer.UnitTests", "Serilog.Sanitizer.UnitTests\Serilog.Sanitizer.UnitTests.csproj", "{7D49BEF3-965D-48B0-890C-9A40D661E3FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sanitizer.UnitTests", "Serilog.Sanitizer.UnitTests\Serilog.Sanitizer.UnitTests.csproj", "{4D10A9B0-5806-466B-8B25-F63C798F4954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Debug|x86.Build.0 = Debug|Any CPU
 		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D49BEF3-965D-48B0-890C-9A40D661E3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D49BEF3-965D-48B0-890C-9A40D661E3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D49BEF3-965D-48B0-890C-9A40D661E3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D49BEF3-965D-48B0-890C-9A40D661E3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2474CAA-B348-4B09-9515-8FB9A932881E}.Release|x86.Build.0 = Release|Any CPU
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Debug|x86.ActiveCfg = Debug|x86
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Debug|x86.Build.0 = Debug|x86
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Release|x86.ActiveCfg = Release|x86
+		{4D10A9B0-5806-466B-8B25-F63C798F4954}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

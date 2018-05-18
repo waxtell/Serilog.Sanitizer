@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Serilog.Sanitizer.Extensions;
 using Serilog.Sanitizer.UnitTests.Sinks;
 using Serilog.Events;
+using NUnit.Framework;
 
 namespace Serilog.Sanitizer.UnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class SanitizerTests
     {
         internal class Employee
         {
-            public string FirstName { get; set;}
+            public string FirstName { get; set; }
             public string LastName { get; set; }
             public string Ssn { get; set; }
         }
 
         private const string OverrideValue = "***** VALUE OVERRIDDEN *****";
 
-        [TestMethod]
+        [Test]
         public void ScalarValueIsOverridden()
         {
             LogEvent evt = null;
@@ -38,7 +38,7 @@ namespace Serilog.Sanitizer.UnitTests
             Assert.AreEqual(OverrideValue, ((ScalarValue)evt.Properties["test"]).Value);
         }
 
-        [TestMethod]
+        [Test]
         public void StructuredValueIsRemoved()
         {
             LogEvent evt = null;
@@ -58,7 +58,7 @@ namespace Serilog.Sanitizer.UnitTests
             Assert.IsFalse(evt.Properties.ContainsKey("Ssn"));
         }
 
-        [TestMethod]
+        [Test]
         public void StructuredValueIsOverridden()
         {
             LogEvent evt = null;
