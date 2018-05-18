@@ -7,7 +7,7 @@ Sanitize (either remove or override) both structured and unstructured data
 var logger = new LoggerConfiguration()
                 .Sanitize()
                     .Structured()
-                        .ByOverriding<Employee>((dm => dm.HomeAddress, "****** SENSITIVE INFORMATION ******"))
+                        .ByOverriding<Employee>((dm => dm.HomeAddress, @"¯\_(ツ)_/¯"))
                         .ByRemoving<Employee>(dm => dm.Ssn)
                     .Unstructured()
                         .ByOverriding(("Request.Params[HTTP_AUTHORIZATION]", @"¯\_(ツ)_/¯"))
