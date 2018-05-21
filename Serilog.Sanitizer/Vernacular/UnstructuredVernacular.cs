@@ -35,6 +35,12 @@ namespace Serilog.Sanitizer.Vernacular
 
             return this;
         }
+        public UnstructuredVernacular ByOverriding(string property, string valueOverride)
+        {
+            _enricher.Override((property,valueOverride));
+
+            return this;
+        }
 
         public StructuredVernacular Structured()
         {
