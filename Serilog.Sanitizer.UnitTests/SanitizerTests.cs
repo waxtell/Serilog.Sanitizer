@@ -21,7 +21,7 @@ namespace Serilog.Sanitizer.UnitTests
         private const string OverrideValue = "***** VALUE OVERRIDDEN *****";
 
         [Test]
-        public void ScalarValueIsOverridden()
+        public void UnstructuredValueIsOverriddenTuple()
         {
             LogEvent evt = null;
 
@@ -29,6 +29,24 @@ namespace Serilog.Sanitizer.UnitTests
                             .Sanitize()
                                 .Unstructured()
                                 .ByOverriding(("test", OverrideValue))
+                                .Continue()
+                            .WriteTo.Sink(new DelegatingSink(e => evt = e))
+                            .CreateLogger();
+
+            logger.Information("Sensitive Information {@test}", "original value");
+
+            Assert.AreEqual(OverrideValue, ((ScalarValue)evt.Properties["test"]).Value);
+        }
+
+        [Test]
+        public void UnstructuredValueIsOverriddenNonTuple()
+        {
+            LogEvent evt = null;
+
+            var logger = new LoggerConfiguration()
+                            .Sanitize()
+                                .Unstructured()
+                                .ByOverriding("test", OverrideValue)
                                 .Continue()
                             .WriteTo.Sink(new DelegatingSink(e => evt = e))
                             .CreateLogger();
