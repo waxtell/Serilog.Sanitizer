@@ -20,7 +20,7 @@ namespace Serilog.Sanitizer.Vernacular
         {
             DestructuringPolicy<T> policyForType;
 
-            if (!_policiesByType.TryGetValue(typeof(T), out object dictionaryItem))
+            if (!_policiesByType.TryGetValue(typeof(T), out var dictionaryItem))
             {
                 policyForType = new DestructuringPolicy<T>();
 
@@ -45,7 +45,7 @@ namespace Serilog.Sanitizer.Vernacular
         {
             DestructuringPolicy<T> policyForType;
 
-            if (!_policiesByType.TryGetValue(typeof(T), out object dictionaryItem))
+            if (!_policiesByType.TryGetValue(typeof(T), out var dictionaryItem))
             {
                 policyForType = new DestructuringPolicy<T>();
 

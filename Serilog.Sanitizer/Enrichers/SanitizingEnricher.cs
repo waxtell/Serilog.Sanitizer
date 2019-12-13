@@ -9,10 +9,6 @@ namespace Serilog.Sanitizer.Enrichers
         public List<(string propertyName, string overrideValue)> ToOverride { get; set; } = new List<(string propertyName, string overrideValue)>();
         public List<string> ToRemove { get; set; } = new List<string>();
 
-        internal SanitizingEnricher()
-        {
-        }
-
         public ISanitizingEnricher Override(params (string propertyName, string overrideValue)[] overrides)
         {
             ToOverride.AddRange(overrides);

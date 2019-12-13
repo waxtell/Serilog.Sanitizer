@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Serilog.Sanitizer.Extensions
 {
-    static class ExpressionExtensions
+    internal static class ExpressionExtensions
     {
         public static string GetPropertyNameFromExpression<T>(this Expression<Func<T, object>> expression)
         {
@@ -14,10 +14,10 @@ namespace Serilog.Sanitizer.Extensions
             if (memberExpression == null || GetMemberExpression(memberExpression.Expression) != null)
             {
                 throw new ArgumentException
-                            (
-                                string.Format("{0} does not resolve to a property of form x => x.Property", expressionBody.GetType().Name), 
-                                "expression"
-                            );
+                (
+                    $"{expressionBody.GetType().Name} does not resolve to a property of form x => x.Property", 
+                    nameof(expression)
+                );
             }
 
             return memberExpression.Member.Name;
@@ -25,9 +25,10 @@ namespace Serilog.Sanitizer.Extensions
 
         private static MemberExpression GetMemberExpression(Expression expression)
         {
-            return expression is UnaryExpression bodyOfExpression
-                        ? bodyOfExpression.Operand as MemberExpression
-                        : expression as MemberExpression;
+            return 
+                expression is UnaryExpression bodyOfExpression
+                    ? bodyOfExpression.Operand as MemberExpression
+                    : expression as MemberExpression;
         }
     }
 }

@@ -5,11 +5,11 @@ namespace Serilog.Sanitizer.Configuration
 {
     public class GenericConfigurationElementCollection<T> : ConfigurationElementCollection, IEnumerable<T> where T : ConfigurationElement, new()
     {
-        readonly List<T> _elements = new List<T>();
+        private readonly List<T> _elements = new List<T>();
 
         protected override ConfigurationElement CreateNewElement()
         {
-            T newElement = new T();
+            var newElement = new T();
             _elements.Add(newElement);
             return newElement;
         }
