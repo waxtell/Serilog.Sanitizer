@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Serilog.Sanitizer.Configuration
 {
-    class SanitizerConfigSection : ConfigurationSection, ISanitizerConfiguration
+    public class SanitizerConfigSection : ConfigurationSection, ISanitizerConfiguration
     {
         [ConfigurationProperty(PropertyNames.ToOverride, IsRequired = true)]
         [ConfigurationCollection(typeof(OverrideConfigElement), AddItemName = "property", ClearItemsName = "clear", RemoveItemName = "remove")]

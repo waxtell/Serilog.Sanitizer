@@ -24,6 +24,7 @@ namespace Serilog.Sanitizer.Vernacular
             if (_unstructuredVernacular == null)
             {
                 var enricher = new SanitizingEnricher();
+                
                 _loggerConfiguration.Enrich.With(enricher);
 
                 _unstructuredVernacular = new UnstructuredVernacular(this, enricher);

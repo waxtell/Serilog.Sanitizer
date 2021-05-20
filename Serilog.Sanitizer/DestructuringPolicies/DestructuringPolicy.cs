@@ -83,7 +83,7 @@ namespace Serilog.Sanitizer.DestructuringPolicies
                 catch (TargetInvocationException ex)
                 {
                     SelfLog.WriteLine($"Exception {ex} thrown for property {propertyInfo}", ex);
-                    propertyValue = $"Exception {ex?.InnerException.GetType().Name} thrown for property accessor";
+                    propertyValue = $"Exception {ex.InnerException?.GetType().Name} thrown for property accessor";
                 }
 
                 structureProperties

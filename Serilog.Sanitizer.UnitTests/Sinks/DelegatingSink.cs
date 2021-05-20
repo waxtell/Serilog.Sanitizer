@@ -10,7 +10,7 @@ namespace Serilog.Sanitizer.UnitTests.Sinks
 
         public DelegatingSink(Action<LogEvent> loggingDelegate)
         {
-            _loggingDelegate = loggingDelegate ?? throw new ArgumentNullException("loggingDelegate");
+            _loggingDelegate = loggingDelegate ?? throw new ArgumentNullException(nameof(loggingDelegate));
         }
 
         public void Emit(LogEvent logEvent)
