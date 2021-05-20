@@ -13,7 +13,7 @@ namespace Serilog.Sanitizer.UnitTests
         [Test]
         public void UnstructuredValueIsOverridden()
         {
-            LogEvent evt = null;
+            LogEvent? evt = null;
 
             var logger = new LoggerConfiguration()
                             .Sanitize()
@@ -34,14 +34,14 @@ namespace Serilog.Sanitizer.UnitTests
                 .AreEqual
                 (
                     OverrideValue, 
-                    ((ScalarValue) evt.Properties["test"]).Value
+                    (evt?.Properties["test"] as ScalarValue)?.Value
                 );
         }
 
         [Test]
         public void UnstructuredValueIsRemoved()
         {
-            LogEvent evt = null;
+            LogEvent? evt = null;
 
             var logger = new LoggerConfiguration()
                             .Sanitize()
@@ -53,7 +53,7 @@ namespace Serilog.Sanitizer.UnitTests
 
             logger.Information("Sensitive Information {@test}", "original value");
 
-            Assert.IsFalse(evt.Properties.ContainsKey("test"));
+            Assert.IsFalse(evt?.Properties.ContainsKey("test"));
         }
     }
 }
