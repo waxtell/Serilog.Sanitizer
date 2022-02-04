@@ -1,21 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Description>Log sanitizer for Serilog that supports structured and unstructured log event data.</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/waxtell/Serilog.Sanitizer</PackageProjectUrl>
     <RepositoryUrl>https://github.com/waxtell/Serilog.Sanitizer</RepositoryUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <NeutralLanguage></NeutralLanguage>
-    <Version>1.3.1</Version>
+    <Version>1.3.2-beta</Version>
     <Authors>Will Axtell</Authors>
     <SignAssembly>true</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <Company />
     <PackageTags>Serilog Sensitive</PackageTags>
-    <PackageReleaseNotes>1.3.1- Strong named assembly
-1.2.0- Support .net standard 2.0 and 2.1</PackageReleaseNotes>
+    <PackageReleaseNotes>
+	    1.3.2- Remove net5.0 target as it was breaking FF implementations
+	    1.3.1- Strong named assembly
+		1.2.0- Support .net standard 2.0 and 2.1
+    </PackageReleaseNotes>
     <AssemblyOriginatorKeyFile>../assets/Serilog.Sanitizer.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
